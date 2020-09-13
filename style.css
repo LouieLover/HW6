@@ -17,6 +17,7 @@ h1 {
 
 span {
     font-size: 1em;
+    box-sizing: content-box;
 }
 
 li:hover {
