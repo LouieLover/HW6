@@ -23,6 +23,7 @@
     var dayOver = false;
     var queryForecastURL = "http://apiopenweathermap.org/data/2.5/forecast?id=" + cityId + "&appId=" + APIKey;
     var openWeatherApi = $("https://openweathermap.org/api")
+    var APIKey = "740ab5ca3f43248bd229138d016bc556"
 
 
     function get(c) {
@@ -140,9 +141,9 @@
         document.location.reload();
 
     }
-    $("#search-button").on("click", displayWeather);
+    searchButton.on("click", displayWeather);
     $(document).on("click", invokePastSearch);
     $(window).on("load", loadLastCity);
-    $("#clear-history").on("click", clearHistory);
+    resetButton.on("click", clearHistory);
 
 });
