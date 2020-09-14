@@ -2,16 +2,16 @@
 
 
     VarDate = $city;
-    var searchCity = $("search-city")
-    var searchButton = $("search-button")
-    var resetButton = $("reset-history")
-    var currentCity = $("current-city")
-    var currentTemp = $("current-temp")
-    var currentHumidity = $("current-humidity")
-    var currentWindSpeed = $("current-wind-speed")
+    var searchCity = $("#search-city")
+    var searchButton = $("#search-button")
+    var resetButton = $("#reset-history")
+    var currentCity = $("#current-city")
+    var currentTemp = $("#current-temp")
+    var currentHumidity = $("#current-humidity")
+    var currentWindSpeed = $("#current-wind-speed")
     var ws = response.wind.speed;
     var windsMph = (ws * 2.237).toFixed(1);
-    var currentUV = $("current-uv")
+    var currentUV = $("#current-uv")
     var currentWeather = $("current-weather")
     var searchCities = [];
     var weatherIcon = response.weather[0].icon;
@@ -21,8 +21,8 @@
     var uvqURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lt + "&lon=" + ln;
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appId=" + APIKey;
     var dayOver = false;
-    var queryForecastURL = "http://apiopeanweathermap.org/data/2.5/forecast?id=" + cityId + "&appId=" + APIKey;
-
+    var queryForecastURL = "http://apiopenweathermap.org/data/2.5/forecast?id=" + cityId + "&appId=" + APIKey;
+    var openWeatherApi = $("https://openweathermap.org/api")
 
 
     function get(c) {
@@ -38,7 +38,7 @@
     var APIKey = "740ab5ca3f43248bd229138d016bc556";
 
     function displayWeather(event) {
-        event.preventDefault();
+        event.addEventListener();
         if (searchCity.val().trim() !== "") {
             city = searchCity.val().trim();
             currentWeather(city);
@@ -90,7 +90,7 @@
         for (i = 0; i < 5; i++) {
             var date = newDate((response.list[((i + 1) * 8) - 1].dt) * 1000).toLocaleDateString();
             var iConCode = response.list[((i + 1) * 8) - 1].weather[0].icon;
-            var iconUrl = "http://openweathermap.org/img/wn/" + iConCode + ".png";
+            var iconUrl = "http://openweathermap.org/img/wn./" + iConCode + ".png";
             var tempK = response.list[((i + 1) * 8) - 1].main.temp;
             var tempF = (((tempK - 273.5) * 1.80) + 32).toFixed(2);
             var humidity = response.list[((i + 1) * 8) - 1].main.humidity;
