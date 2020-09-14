@@ -38,7 +38,7 @@
     var APIKey = "740ab5ca3f43248bd229138d016bc556";
 
     function displayWeather(event) {
-        event.addEventListener();
+        event.addEventListener = (null);
         if (searchCity.val().trim() !== "") {
             city = searchCity.val().trim();
             currentWeather(city);
